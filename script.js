@@ -3,6 +3,10 @@ const textArea = document.querySelector("div > textarea");
 const colorInput = document.querySelector("div > input");
 const button2 = document.querySelector(".btn2");
 
+const sound  = new Audio("./beep.mp3");
+const wasted = new Audio("./wasted.mp3");
+const slide = new Audio("./slide.mp3");
+
 
 const mishra = document.querySelector("#notes-section");
 
@@ -45,6 +49,7 @@ button.addEventListener('click', ()=> {
     btn.style.cursor="pointer";
 
      textArea.value="";
+     slide.play();
      
 })
 
@@ -54,6 +59,7 @@ mishra.addEventListener('click',(e)=>{
     if(e.target.tagName === "SPAN"){
         e.target.parentNode.parentNode.remove();
         console.log(e);
+        sound.play();
     }
     
 })
@@ -61,6 +67,7 @@ mishra.addEventListener('click',(e)=>{
 button2.addEventListener('click', (e) =>{
     // alert("clickme");
     mishra.innerHTML = `<p class="animate__bounceIn new">You have not added a note yet.</p>`;
+    wasted.play();
 
 })
 
