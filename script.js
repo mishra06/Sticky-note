@@ -6,6 +6,7 @@ const button2 = document.querySelector(".btn2");
 const sound  = new Audio("./beep.mp3");
 const wasted = new Audio("./wasted.mp3");
 const slide = new Audio("./slide.mp3");
+const door = new Audio("./door.mp3");
 
 
 const mishra = document.querySelector("#notes-section");
@@ -17,6 +18,7 @@ button.addEventListener('click', ()=> {
 
     if(noteText === ""){
         alert("please enter some thing");
+        door.play();
         return;
     }
 
